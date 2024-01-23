@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="test.css">
+ <title>EXPLORE VERVE GALLERY!</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2{
+    text-align: center;
+    font-size: 30px;
+    margin: 15px;
+}
+
+
+.gallery{
+    margin: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-gap: 0.5rem;
+    grid-auto-flow: dense;
+}
+
+.gallery .image{
+    min-height: 150px;
+}
+
+.gallery .image img{
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+        .logo {
+            z-index: 999;
+            max-width: 100px;
+        }
+
+        #glassyNav {
+            background-color: rgb(71 71 71 / 25%);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            position: fixed;
+            top: 0px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        #glassyNav img {
+            height: 100px;
+        }
+
+        #glassyNav ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            margin-left: -10px;
+        }
+
+        #glassyNav a {
+            text-decoration: none;
+            color: #1becc9;
+            font-weight: bold;
+            font-size: 1rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: color 0.3s ease;
+        }
+
+        #glassyNav a:last-child {
+            margin-right: -10px;
+        }
+
+        #glassyNav a:hover {
+            color: #ffcc00;
+        }
+
+        .column:hover img {
+            filter: brightness(1.5);
+            transition: filter 0.3s ease;
+}
+.page-event {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cover {
+    background-color: rgb(41, 38, 38);
+    height: 360px;
+   background-color: #2f2c2c;
+    background-position: center center;
+    background-size: cover;
+}
+
+.heading {
+    font-family: 'Telefon Black';
+    font-size: 60px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+     padding-top: 20vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #c5ff75;
+    transition: font-size 0.3s;
+  }
+  
+  .heading::first-letter {
+    color: #db2d8e;
+  }
+  #nav{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(45deg, rgb(115, 84, 84), rgb(208, 101, 171));
+  overflow: hidden;
+  transition: all 2s ease-in;
+}
+
+#nav img{
+  height: 16vh;
+}
+
+#nav a{
+  pointer-events: all;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1becc9;
+  transition: all 0.2s ease-in;
+}
+
+#nav a:hover {
+  color: #ffcc00;
+  scale: 110%;
+}
+
+#nav .icon {
+  display: none;
+}
+
+@media only all and (max-width: 600px) { 
+  #nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(45deg, rgb(135, 69, 69), rgb(95, 120, 152));
+    transition: all 2s ease-in;
+  }
+  #nav a{
+    display: none;
+  }
+  #nav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  #nav.responsive {
+    position: relative;
+  }
+
+  #nav.responsive .icon {
+    position: initial;
+    right: 0;
+    top: 0;
+  }
+
+  #nav.responsive a {
+    float: none;
+    display: block;
+    text-align: right;
+  }
+
+}
+
+
+    </style>
+   
+</head>
+
+<body>
+<!-- <nav id="glassyNav">
+        <img src="l2.png" alt="Logo" class="logo">
+        <ul>
+            <li><a href=index.html>Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Event.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="Verve_Contact.html">Contact Us</a></li>
+        </ul>
+    </nav> -->
+    <body id="main">
+
+   
+        <nav class="mask">
+            <a href="#"><img src="LOG.png" alt="Logo" class="logo"></a>
+           
+              
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="event.html">Event</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="verve_contact.html">Contact</a></li>
+            </ul>
+  
+            
+            <div ><button class="menuList openbtn" onclick="openNav()"></button></div>
+          </nav>
+  
+          <div id="mySidebar" class="sidebar">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+              <a href="index.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="event.html">Event</a>
+              <a href="gallery.html">Gallery</a>
+              <a href="verve_contact.html">Contact</a>
+            </div>
+    <div class="page-event">
+        <div class="cover">
+            <div class="heading">EXPLORE GALLERY!</div>
+        </div>
+        <hr class="golden-line"> 
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <div class="image">
+            <img src="20230323002852_IMG_0079.jpg" alt="Decription">
+        </div>
+        <div class="image">
+            <img src="20230329081655_IMG_4622.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="IMG_0469.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="IMG_9886.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="pn-7112.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="pic2.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="20230329072921_IMG_4564.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="20230323000625_IMG_0028.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="n1.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="N6.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="SJ-1316.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="SJ-0797.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src= "N8.jpg"alt="">
+        </div>
+        <div class="image">
+            <img src="IMG_1424.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="IMG_9160.JPG" alt="">
+        </div>
+ <div class="image">
+            <img src="IMG_1588.jpg" alt="">
+        </div>
+ <div class="image">
+            <img src= "AAA_0371.JPG"alt="">
+        </div>
+ <div class="image">
+            <img src="N2.jpg" alt="">
+        </div>
+ <div class="image">
+            <img src="N4.jpg" alt="">
+        </div>
+ <div class="image">
+            <img src="IMG_0739.jpg" alt="">
+        </div>
+ <div class="image">
+            <img src="P2.jpg" alt="">
+        </div>
+ <div class="image">
+            <img src="IMG_0423.JPG" alt="">
+        </div>
+ <div class="image">
+            <img src="20230327195716__MG_0046.jpg" alt="">
+        </div>
+ <div class="image">
+            <img src="20230327193334__MG_9984.jpg" alt="">
+        </div>
+ <div class="image">
+            <img src="_MG_9866.jpg" alt="">
+        </div>
+ <div class="image">
+            <img src="P10.jpg" alt="">
+        </div>
+ <div class="image">
+            <img src="N3.jpg" alt="">
+        </div>
+ <div class="image">
+            <img src="P5.jpg" alt="">
+        </div>
+ <div class="image">
+            <img src="P9.jpg" alt="">
+        </div>
+    
+    <div class="image">
+        <img src="ss.jpg" alt="">
+    </div>
+
+<div class="image">
+    <img src="YU-118.jpg" alt="">
+</div>
+
+<div class="image">
+    <img src="P1.jpg" alt="">
+</div>
+<div class="image">
+    <img src="IMG_0503.jpg" alt="">
+</div>
+
+<div class="image">
+<img src="B1.jpg" alt="">
+</div>
+
+<div class="image">
+<img src="B2.jpg" alt="">
+</div>
+<div class="image">
+    <img src="P4.jpg" alt="">
+</div>
+
+<div class="image">
+<img src="B8.jpg" alt="">
+</div>
+
+<div class="image">
+<img src="B11.jpg" alt="">
+</div>
+<div class="image">
+    <img src="20230327011045_IMG_3264.jpg" alt="">
+</div>
+
+<div class="image">
+<img src="B12.jpg" alt="">
+</div>
+<div class="image">
+    <img src="B13.jpg" alt="">
+    </div>
+    
+    <div class="image">
+    <img src="IMG_1313.jpg" alt="">
+    </div>
+    <div class="image">
+        <img src="P3.jpg" alt="">
+    </div>
+    
+    <div class="image">
+    <img src="B14.JPG" alt="">
+    </div>
+    <div class="image">
+        <img src="B15.jpg"alt="">
+        </div>
+        
+        <div class="image">
+        <img src="P8.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="P7.jpg" alt="">
+        </div>
+        
+        
+
+</div>
+<script>
+    function openNav() {
+        console.log("hi")
+      document.getElementById("mySidebar").style.width = "100%";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+    }
+    </script>
+</body>
+</html>
