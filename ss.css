@@ -17,7 +17,17 @@ body {
   margin: 0;
   padding: 0;
 }
-
+h1{
+  color: antiquewhite;
+  font-size: 32px;
+  margin-left: 0;
+}
+p{
+  color: #fff;
+  font-size: 18px;
+     justify-content:center ;
+     margin-left: 0;
+}
 .page-event {
   background-color: #212121;
    padding-top: 50px;
@@ -30,6 +40,7 @@ body {
     background-image: url('https://goo.gl/NA3iQP');
     background-position: center center;
     background-size: cover;
+    margin-left: 0;
     
     .heading {
       font-family: 'Telefon Black';
@@ -52,7 +63,7 @@ body {
 }
 
   .upcoming-sec {
-    padding: 5vh 0;
+    padding: 0;
     border-bottom: 1px solid #ccc;
     
     .heading {
@@ -65,7 +76,7 @@ body {
     color: #ccc;
     
     .event-block {
-      padding: 5vh 0;
+      padding: 0;
       border-bottom: 1px solid #ccc;
       
       .sec-1,
@@ -180,7 +191,7 @@ body {
   }
 
 
-@media (min-width: 992px) {
+@media (min-width: 600px) {
   .upcoming-event-list {
     .event-block {
       .sec-1 {
@@ -195,7 +206,7 @@ body {
 
 }
 
-@media (max-width: 991px) {
+@media (max-width: 600px) {
   .page-event {
     .cover {
       .heading {
@@ -264,7 +275,7 @@ body {
               font-size: 36px;
             }
             .title {
-              padding-left: 20px;
+              padding-left: 0px;
               font-size: 20px;
               vertical-align: top;
             }
@@ -282,48 +293,4 @@ body {
   .logo {
     z-index: 999;
     max-width: 100px;
-}
-#glassyNav {
-  background-color: rgba(71,71,71,0.25); 
-  backdrop-filter: blur(10px); 
-  padding: 10px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000; 
-}
-
-#glassyNav img {
-  height: 100px; 
-}
-
-#glassyNav ul {
-  list-style: none;
-  display: flex;
-  gap: 4rem;
-  margin: 10px;
-}
-
-#glassyNav a {
-  font-family: "Poppins", "Segoe UI";
-  text-decoration: none;
-  color: #1becc9;
-  font-weight: bold;
-  font-size: 1.2rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: color 0.3s ease;
-}
-
-#glassyNav a:hover {
-  color: #ffcc00;
-}
-.column:hover img {
-  filter: brightness(1.5); 
-  transition: filter 0.3s ease;
 }
