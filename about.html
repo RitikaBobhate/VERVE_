@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="test.css">
+    
+
     <title>About Us</title>
     <style>
         body {
@@ -22,7 +24,7 @@
 
         header {
             text-align: center;
-            padding: 20px;
+            padding: 30px;
             color: rgb(255, 255, 255);
             z-index: 2;
             position: relative;
@@ -68,152 +70,18 @@
             z-index: 999;
             max-width: 100px;
         }
-        #glassyNav {
-            /* background-color: rgba(255, 255, 255, 0.304);
-            backdrop-filter: blur(70px); */
-            background: linear-gradient(45deg, rgb(135, 69, 69), rgb(95, 120, 152));
-            backdrop-filter: blur(10px);
-            padding: 10px;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            width: 100%;
-            z-index: 1000;
-        }
+       
 
-        #glassyNav img {
-            height: 100px;
-        }
+ 
 
-        #glassyNav ul {
-            list-style: none;
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            align-items: center;
-            vertical-align: middle;
-            margin-left: 2px;
-            margin-right: 2px;
-        }
-
-        #glassyNav a {
-            text-decoration: none;
-            color: #1becc9;
-            font-weight: bold;
-            font-size: 1.2rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            transition: color 0.3s ease;
-        }
-
-
-        #glassyNav a:hover {
-            color: #ffcc00;
-        }
-
-        .column:hover img {
-            filter: brightness(1.5);
-            transition: filter 0.3s ease;
-        }
-
-        @media screen and (max-width: 100px) {
-            h1 {
-                font-size: 35px;
-            }
-
-            p {
-                font-size: 16px;
-            }
-
-            .logo {
-                max-width: 80px;
-            }
-
-            #glassyNav img {
-                height: 30px;
-            }
-
-            #glassyNav a {
-                font-size: 14px;
-            }
-        }
-        @media screen and (max-width: 600px) {
-            #glassyNav ul {
-                display: none; /* Hide the top navigation links */
-            }
-
-            #glassyNav a.icon {
-                display: block; /* Display the mobile menu icon */
-            }
-
-            .topnav.responsive ul {
-                display: flex;
-                flex-direction: column; /* Display links vertically on small screens */
-            }
-
-            .topnav.responsive a {
-                padding: 10px; /* Adjust padding for better touch interaction */
-                text-align: center;
-            }
-
-            .bottom-nav {
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-            }
-        }
         
-        .hamburger-menu {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger-menu div {
-            width: 25px;
-            height: 3px;
-            background-color: #1becc9;
-            margin: 6px 0;
-            transition: 0.4s;
-        }
-
-        @media screen and (max-width: 480px) {
-            #glassyNav ul {
-                display: none; /* Hide the top navigation links */
-            }
-
-            #glassyNav a.icon {
-                display: flex; /* Display the mobile menu icon */
-            }
-
-            .topnav.responsive ul {
-                display: flex;
-                flex-direction: column; /* Display links vertically on small screens */
-            }
-
-            .topnav.responsive a {
-                padding: 10px; /* Adjust padding for better touch interaction */
-                text-align: center;
-            }
-
-            .bottom-nav {
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hamburger-menu {
-                display: flex;
-            }
-        }
     </style>
 </head>
+<body id="main">
 
-<body>
 
   
-    <body id="main">
+    
 
    
         <nav class="mask">
@@ -229,11 +97,11 @@
             </ul>
   
             
-            <div ><button class="menuList openbtn" onclick="openNav()"></button></div>
+            <div><button class="menuList openbtn" onclick="openNav()"></button></div>
           </nav>
   
           <div id="mySidebar" class="sidebar">
-              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
               <a href="index.html">Home</a>
               <a href="about.html">About</a>
               <a href="event.html">Event</a>
@@ -263,18 +131,11 @@
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        function toggleNav() {
-            var x = document.getElementById("glassyNav").querySelector("ul");
-            if (x.style.display === "flex") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "flex";
-            }
-        }
+   
         particlesJS("particles-js", {
             particles: {
                 number: {
-                    value: 150,
+                    value: 250,
                     density: {
                         enable: true,
                         value_area: 1200,
@@ -384,10 +245,10 @@
     </script>
     <script>
         function openNav() {
-            console.log("hi")
-          document.getElementById("mySidebar").style.width = "100%";
-          document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
         }
+        
         
         function closeNav() {
           document.getElementById("mySidebar").style.width = "0";
