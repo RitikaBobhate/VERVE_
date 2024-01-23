@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+    <title>About Us</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            
+            background-color: black;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            color: rgb(255, 255, 255);
+            z-index: 2;
+            position: relative;
+        }
+
+        main {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 3px;
+            color: rgb(255, 255, 255);
+            font-size: 3px;
+            padding-top: -10px;
+        }
+
+        h1 {
+            color: #3498db;
+            margin-top: 50px;
+            font-size: 45px;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 17px;
+        }
+
+        .golden-line {
+            width: 50px;
+            height: 3px;
+            background-color: gold;
+            margin: 20px auto;
+        }
+
+        .blurred-container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 3rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            margin: 20px;
+        }
+
+        .logo {
+            z-index: 999;
+            max-width: 100px;
+        }
+        #glassyNav {
+            /* background-color: rgba(255, 255, 255, 0.304);
+            backdrop-filter: blur(70px); */
+            background: linear-gradient(45deg, rgb(135, 69, 69), rgb(95, 120, 152));
+            backdrop-filter: blur(10px);
+            padding: 10px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        #glassyNav img {
+            height: 100px;
+        }
+
+        #glassyNav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            vertical-align: middle;
+            margin-left: 2px;
+            margin-right: 2px;
+        }
+
+        #glassyNav a {
+            text-decoration: none;
+            color: #1becc9;
+            font-weight: bold;
+            font-size: 1.2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: color 0.3s ease;
+        }
+
+
+        #glassyNav a:hover {
+            color: #ffcc00;
+        }
+
+        .column:hover img {
+            filter: brightness(1.5);
+            transition: filter 0.3s ease;
+        }
+
+        @media screen and (max-width: 100px) {
+            h1 {
+                font-size: 35px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .logo {
+                max-width: 80px;
+            }
+
+            #glassyNav img {
+                height: 30px;
+            }
+
+            #glassyNav a {
+                font-size: 14px;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            #glassyNav ul {
+                display: none; /* Hide the top navigation links */
+            }
+
+            #glassyNav a.icon {
+                display: block; /* Display the mobile menu icon */
+            }
+
+            .topnav.responsive ul {
+                display: flex;
+                flex-direction: column; /* Display links vertically on small screens */
+            }
+
+            .topnav.responsive a {
+                padding: 10px; /* Adjust padding for better touch interaction */
+                text-align: center;
+            }
+
+            .bottom-nav {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger-menu div {
+            width: 25px;
+            height: 3px;
+            background-color: #1becc9;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        @media screen and (max-width: 480px) {
+            #glassyNav ul {
+                display: none; /* Hide the top navigation links */
+            }
+
+            #glassyNav a.icon {
+                display: flex; /* Display the mobile menu icon */
+            }
+
+            .topnav.responsive ul {
+                display: flex;
+                flex-direction: column; /* Display links vertically on small screens */
+            }
+
+            .topnav.responsive a {
+                padding: 10px; /* Adjust padding for better touch interaction */
+                text-align: center;
+            }
+
+            .bottom-nav {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hamburger-menu {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+  
+    <body id="main">
+
+   
+        <nav class="mask">
+            <a href="#"><img src="LOG.png" alt="Logo" class="logo"></a>
+           
+              
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="event.html">Event</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="verve_contact.html">Contact</a></li>
+            </ul>
+  
+            
+            <div ><button class="menuList openbtn" onclick="openNav()"></button></div>
+          </nav>
+  
+          <div id="mySidebar" class="sidebar">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+              <a href="index.html">Home</a>
+              <a href="about.html">About</a>
+              <a href="event.html">Event</a>
+              <a href="gallery.html">Gallery</a>
+              <a href="verve_contact.html">Contact</a>
+            </div>        
+    <div id="particles-js"></div>
+
+    <header>
+        <h1>About Us</h1>
+        <div class="golden-line"></div>
+    </header>
+
+    <main>
+        <div class="blurred-container">
+            <p>VERVE VIT is an exhilarating intercollegiate festival hosted by VIT, Mumbai, bringing together students from diverse
+                academic backgrounds to showcase their talents & celebrate creativity.
+
+                With a vibrant mix of cultural events VERVE VIT offers a platform for participants to engage in friendly
+                competition, fostering a spirit of collaboration. The festival encompasses a wide array of
+                activities like music performances, dance competitions, street plays and much more. Known for its
+                energetic atmosphere and innovative events, VERVE VIT has become a highlight on the academic calendar, attracting
+                participants and spectators alike, creating lasting memories within VIT.
+            </p>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        function toggleNav() {
+            var x = document.getElementById("glassyNav").querySelector("ul");
+            if (x.style.display === "flex") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "flex";
+            }
+        }
+        particlesJS("particles-js", {
+            particles: {
+                number: {
+                    value: 150,
+                    density: {
+                        enable: true,
+                        value_area: 1200,
+                    },
+                },
+                color: {
+                    value: "#3498db",
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000",
+                    },
+                    polygon: {
+                        nb_sides: 5,
+                    },
+                    image: {
+                        src: "img/github.svg",
+                        width: 100,
+                        height: 100,
+                    },
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false,
+                    },
+                },
+                size: {
+                    value: 10, // Adjusted particle size
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false,
+                    },
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#3498db",
+                    opacity: 0.4,
+                    width: 1,
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200,
+                    },
+                },
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse",
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push",
+                    },
+                    resize: true,
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1,
+                        },
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3,
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4,
+                    },
+                    push: {
+                        particles_nb: 4,
+                    },
+                    remove: {
+                        particles_nb: 2,
+                    },
+                },
+            },
+            retina_detect: true,
+        });
+    </script>
+    <script>
+        function openNav() {
+            console.log("hi")
+          document.getElementById("mySidebar").style.width = "100%";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+        </script>
+</body>
+
+</html>
