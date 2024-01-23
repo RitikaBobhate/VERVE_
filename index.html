@@ -1,49 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Your website description">
-<meta name="keywords" content="keyword1, keyword2, ...">
-<meta name="language" content="en">
-
-
-    <title>Tech</title>
-   
-    <link rel="stylesheet" type="text/css" href="C:\Users\Asus\Desktop\htmlsite\style.css">
+    <meta name="keywords" content="keyword1, keyword2, ...">
+    <meta name="language" content="en">
+    <title>VERVE</title>   
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="style.css" async>
+    <link rel="stylesheet" href="test.css">
     <link rel="import" href="Verve_Contact.html">
     <link rel="import" href="Event.html">
     <link rel="import" href="gallery.html">
     <link rel="import" href="about.html">
-
-    
     <style>
-        
-        
     </style>
 </head>
-<body>
+<body id="main">
 
-    <nav id="glassyNav">
-        <img src="logo12.jpg" alt="Logo" class="logo">
-        <ul>
-            <li><a href=index.html>Home</a></li>
-            <li><a href="about.html">About </a></li>
-            <li><a href="Event.html">Events</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="Verve_Contact.html">Contact Us</a></li>
-        </ul>
-    </nav>
+   
+    <nav class="mask">
+        <a href="#"><img src="LOG.png" alt="Logo" class="logo"></a>
+       
+          
+          <ul class="nav-list">
+              <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./event.html">Event</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./verve_contact.html">Contact</a></li>
+          </ul>
+
+          
+          <div ><button class="menuList openbtn" onclick="openNav()"></button></div>
+        </nav>
+
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./event.html">Event</a>
+            <a href="./gallery.html">Gallery</a>
+            <a href="./verve_contact.html">Contact</a>
+          </div>
 
     
   <video autoplay loop muted playsinline>
     <!-- <source src="WELCOME.mp4" type="video/mp4"> -->
-    <source src="Verve short edit - Made with Clipchamp (1).mp4" type="video/mp4">
+    <source src="New video.mp4" type="video/mp4">
  </video>
 
 <header>
@@ -54,32 +62,15 @@
     <div class="page">
         
       </div>
-      <div class="menu">
-        <nav id="main-menu" class="menu__nav">
-          <ul class="menu__list r-list">
-            <li class="menu__group">
-              <a href="tech.html" class="menu__link r-link">Home</a>
-            </li>
-            <li class="menu__group">
-              <a href="gallery.html" class="menu__link r-link">Gallery</a>
-            </li>
-            <li class="menu__group">
-              <a href="Event.html" class="menu__link r-link">Events</a>
-            </li>
-            <li class="menu__group">
-  
-            <li class="menu__group">
-              <a href="Verve_Contact.html" class="menu__link r-link">Contacts</a>
-            </li>
-          </ul>
-        </nav>
-        <button class="menu__toggle r-button" type="button" aria-controls="main-menu">
+
+       
+        <!-- <button class="menu__toggle r-button" type="button" aria-controls="main-menu">
           <span class="menu__hamburger m-hamburger">
             <span class="m-hamburger__label">
               <span class="menu__toggle-hint screen-reader">Open menu</span>
             </span>
           </span>
-        </button>
+        </button> -->
       </div>
       <section id="section2">
 
@@ -94,126 +85,8 @@
       </section>
       <section id="section3">
        
-       <h2 style="font-family: 'Poppins',sans-serif; font-weight: bold; font-size: 50px; color: #8afde8; text-shadow: 0 0 10px rgba(255, 160, 227, 0.8);;margin-top: -10px;">EVENTS</h2>
-       <hr class="golden-line">
-      <div class="gallery-container" id="imageGallery">
-    
-        <div class="glowing-box">
-            <div class="row">
-                <div class="column">
-                    <img src="SP-1539.jpg" alt="S1" style="width:80%"class="frame">
-                </div>
-                <div class="column">
-                    <img src="P3.jpg" alt="S1" style="width:80%"class="frame">
-                </div>
-                <div class="column">
-                    <img src="P9.jpg" alt="S2" style="width:80%"class="frame">
-                </div>
-                <div class="column">
-                    <img src="P4.jpg" alt="S3" style="width:80%"class="frame">
-                </div>
-            </div>
-            <a href="Event.html" class="arrow-link">
-                <h2>----VIEW OUR EVENTS----</h2>
-                <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
-    </section>
-
-    <section id="section4">
-        
-            <h2 style="font-family: 'Poppins', sans-serif; font-weight: bold; font-size: 50px; color: #97ffec; text-shadow: 0 0 10px rgba(255, 160, 227, 0.8);;margin-top: -10px;">GALLERY</h2>
-            <hr class="golden-line">
-            <div class="gallery-container" id="imageGallery">
-             
-                <div class="glowing-box">
-                <div class="row">
-                    <div class="column">
-                        <img src="P11.jpg" alt="S1" style="width:70%" class="frame">
-                    </div>
-                    <div class="column">
-                        <img src="P7.jpg" alt="S1" style="width:70%" class="frame">
-                    </div>
-                    <div class="column">
-                        <img src="P6.jpg" alt="S2" style="width:60%" class="frame">
-                    </div>
-                    <div class="column">
-                        <img src="IMG_1424.jpg" alt="S3" style="width:60%" class="frame">
-                    </div>
-                    
-                </div>
-                <a href="gallery.html" class="arrow-link">
-                    <h2>----VIEW GALLERY----</h2>
-                    <i class="fas fa-arrow-right"></i>
-            </div>
-
-    </section>
-    
-
-
-    
-
-    <section id="section5">
-        <section class="faq bg-primary">
-        <div class="glowing-box">
-            <ul class="faq-list">
-        
-            <div class="container">
-                <div class="faq-title">
-                    <h2 style="font-family: 'Poppins'; font-weight: bold; font-size: 50px; color: #9cffed; text-shadow: 0 0 10px rgba(255, 160, 227, 0.8) 1px 0 10px;;margin-top: -10px;">FAQ</h2>
-                    <hr class="golden-line">
-                    <p style="color: rgb(255, 181, 97);font-size: 20px">Welcome to our FAQ section! We're here to help you find answers to common questions. If you don't see what you're looking for, feel free to reach out to us directly. Happy exploring!</p>
-                </div>
-                <ul class="faq-list">
-                    <li data-aos="fade-up" data-aos-delay="100" class="aos-init aos-animate">
-                        <a data-toggle="collapse" class="collapsed" href="#faq1" aria-expanded="false">
-                            QUESTION NO 1 TO ask? <i class="fas fa-arrow-up"></i>
-                        </a>
-                        <div id="faq1" class="collapse" data-parent=".faq-list">
-                            <p style="color: rgb(255, 255, 254);">Answer to your question.</p>
-                        </div>
-                    </li>
       
-        
       
-                <li data-aos="fade-up" data-aos-delay="300" class="aos-init aos-animate">
-                  <a data-toggle="collapse" href="#faq3" class="collapsed">QUESTION NO 2 TO ask?<i class="fas fa-arrow-up"></i></a>
-                  <div id="faq3" class="collapse" data-parent=".faq-list">
-                    <p style="color: rgb(255, 255, 255);">Answer to your question.</p>
-                  </div>
-                </li>
-      
-                <li data-aos="fade-up" data-aos-delay="400" class="aos-init aos-animate">
-                  <a data-toggle="collapse" href="#faq4" class="collapsed">QUESTION NO 3 TO ask? <i class="fas fa-arrow-up"></i></a>
-                  <div id="faq4" class="collapse" data-parent=".faq-list">
-                    <p style="color: rgb(255, 255, 255);">Answer to your question.</p>
-                  </div>
-                </li>
-      
-                <li data-aos="fade-up" data-aos-delay="500" class="aos-init aos-animate">
-                  <a data-toggle="collapse" href="#faq5" class="collapsed">QUESTION NO 4 TO ask? <i class="fas fa-arrow-up"></i></a>
-                  <div id="faq5" class="collapse" data-parent=".faq-list">
-                    <p style="color: rgb(255, 255, 255);">Answer to your question.</p>
-                  </div>
-                </li>
-      
-                <li data-aos="fade-up" data-aos-delay="600" class="aos-init aos-animate">
-                  <a data-toggle="collapse" href="#faq6" class="collapsed">QUESTION NO 5 TO ask? <i class="fas fa-arrow-up"></i></a>
-                  <div id="faq6" class="collapse" data-parent=".faq-list">
-                    <p style="color: rgb(255, 255, 237);">Answer to your question.</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-         
-
-    <h2 class="animate__animated animate__fadeIn"></h2>
-    <h2 style="font-size: 30px; color: #14f4cb; text-shadow: 0 0 10px rgba(220, 17, 159, 0.8);">EXPLORE! EXPERIENCE! ENHANCE!</h2>
-   
-</section>
-
-
-    
 
     <script>
 
@@ -387,47 +260,32 @@
           
           checkScroll();
       });
-  
-
-      document.addEventListener("DOMContentLoaded", function () {
-        const smokeContainer = document.createElement("div");
-        smokeContainer.classList.add("smoke-container");
-        document.body.appendChild(smokeContainer);
-    
-        for (let i = 0; i < 20; i++) {
-            const smoke = document.createElement("div");
-            smoke.classList.add("cloud");
-            smokeContainer.appendChild(smoke);
+      jsMenuNode.querySelector(`.${menuClassesNames.toggleClass}`).addEventListener('click', toggleMenu);
+      function toggleNav() {
+        var x = document.getElementById("mask").querySelector("ul");
+        if (x.style.display === "flex") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "flex";
         }
-        
-    
-        document.addEventListener("mousemove", function (e) {
-            const cloudParticles = document.querySelectorAll(".cloud");
-    
-            cloudParticles.forEach((cloud, index) => {
-                const x = e.clientX + Math.random() * 20 - 10;
-                const y = e.clientY + Math.random() * 20 - 10;
-                const size = Math.random() * 20 + 10;
-    
-                cloud.style.transform = `translate(${x}px, ${y}px)`;
-                cloud.style.width = `${size}px`;
-                cloud.style.height = `${size}px`;
-    
-                cloud.style.animation = `cloudAnimation 1s linear ${Math.random()}s infinite`;
-    
-                setTimeout(() => {
-                    cloud.style.animation = "";
-                }, 1000);
-            });
-        });
-    });
-    
-    
-     
+    }
+
 
   </script>
+
+  <script>
+    function openNav() {
+        console.log("hi")
+      document.getElementById("mySidebar").style.width = "100%";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+    }
+    </script>
   
-  </body>
-  </html>
+
 </body>
 </html>
