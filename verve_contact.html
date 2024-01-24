@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+        <link rel="stylesheet" href="test.css">
+        
+        <title>Team Page</title>
+        <style>
+          :root {
+            --clr-primary: teal;
+            --clr-secondary: crimson;
+
+            --bg-primary: #000000;
+            --bg-secondary: #9fdee4;
+
+            --text-primary: #ed5757;
+            --text-secondary: #000000;
+          }
+
+          *,
+          *::before,
+          *::after {
+            box-sizing: border-box;
+          }
+
+          * {
+            margin: 20px;
+            font: inherit;
+          }
+
+          html {
+            color-scheme: dark;
+          }
+
+          body {
+            font-family: system-ui, sans-serif;
+            min-height: 100vh;
+            background-color: var(--bg-primary);
+            color: var(--text-secondary);
+          }
+
+          ul:where([role="list"]) {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+          }
+
+          section {
+            padding-block: clamp(2rem, 5vw, 5rem);
+          }
+
+          a {
+            color: rgb(240, 252, 252);
+            text-decoration: none;
+          }
+
+          .container {
+            width: min(100% - 2rem, 65rem);
+            margin-inline: auto;
+          }
+
+          .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+          }
+          .hamburger-menu {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+          }
+
+          .bar {
+            display: block;
+            background-color: white;
+            height: 3px;
+            width: 25px;
+            margin: 5px 0;
+            transition: 0.4s;
+          }
+
+
+          .card {
+              display: grid;
+              gap: 1rem;
+              position: relative;
+              overflow: hidden;
+              width: min(100% - 2rem, 35ch);
+              margin-inline: auto;
+              border-radius: 0.5rem;
+              background-color: var(--bg-secondary);
+              text-align: center;
+              transition: box-shadow 0.3s ease; /* Add transition for smooth effect */
+            }
+            
+            .card:hover {
+              box-shadow: 0 0 20px rgba(255, 255, 255, 0.7); /* Add glow effect on hover */
+            }
+
+          .card__name {
+            font-weight: 700;
+            color: var(--text-primary);
+          }
+
+          .card__position {
+            font-style: italic;
+          }
+
+          .card__img {
+            width: 5rem;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--text-secondary);
+          }
+
+          .card__front {
+            padding: 2em 2em 2.5em 2em;
+            transition: opacity 250ms ease, transform 450ms ease;
+          }
+
+          .card[data-visible="false"] .card__front {
+            opacity: 1;
+            transform: translateY(0);
+          }
+
+          .card__footer {
+            position: relative;
+            height: 1.5rem;
+            background-color: var(--bg-primary);
+            z-index: 90;
+          }
+   
+
+      
+          .card__back {
+            position: absolute;
+            padding: 2em 2em 2em 2em;
+            inset: 0;
+            transition: transform 450ms ease, opacity 150ms ease;
+            z-index: 90;
+            overflow: auto;
+          }
+
+          .card[data-visible="false"] .card__back {
+            opacity: 0;
+            transform: translateY(100%);
+          }
+
+          .card[data-visible="true"] .card__front {
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 150ms ease, transform 450ms ease 50ms;
+          }
+
+          .card[data-visible="true"] .card__back {
+            opacity: 1;
+            transform: translateY(0);
+            transition: transform 350ms ease, opacity 450ms ease 100ms;
+          }
+
+          .card__social {
+            justify-content: center;
+            margin-bottom: 2em;
+          }
+          q {
+            font-size: 16px;
+            line-height: 1.4;
+            margin: 0; 
+          }
+          .card__toggle {
+            text-align: center; 
+            text-align: 1;
+            border-radius: 50%;
+            width: 3rem;
+            aspect-ratio: 1 / 1;
+            padding: 0.5em;
+            border: 0;
+            background-color: var(--clr-primary);
+            color: var(--text-primary);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: pointer;
+            transition: background-color 250ms ease;
+            z-index: 999;
+          }
+
+          .card__toggle-icon {
+            transition: rotate 250ms ease;
+          }
+
+          .card[data-visible="true"] .card__toggle {
+            background-color: var(--clr-secondary);
+          }
+
+          .card[data-visible="true"] .card__toggle-icon {
+            rotate: 315deg;
+          }
+          .section-title {
+              font-size: clamp(2rem, 5vw, 3rem);
+              text-align: center;
+              font-weight: bold; 
+              color: var(--text-primary);
+              margin-bottom: 0.5em;
+            }
+            .golden-line {
+              border: none;  
+              padding: 0;  
+              border-top: 2px solid gold;
+              width: 100%;
+              margin: 10px auto;
+          }
+            .logo {
+              position: fixed;
+              top: 10px;
+              left: 0px;
+              z-index: 999;
+              max-width: 100px;
+          }
+        
+        
+
+.event-container1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: rgba(107, 228, 168, 0.9);
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(79, 79, 79, 0.1);
+  width: 300px; 
+}
+
+
+
+
+.card p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+      
+        </style>
+      </head>
+
+      <body>
+        <body id="main">
+
+   
+          <nav class="mask">
+              <a href="#"><img src="LOG.png" alt="Logo" class="logo"></a>
+             
+                
+              <ul class="nav-list">
+                  <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./event.html">Event</a></li>
+                <li><a href="./gallery.html">Gallery</a></li>
+                <li><a href="./verve_contact.html">Contact</a></li>
+              </ul>
+    
+              
+              <div ><button class="menuList openbtn" onclick="openNav()"></button></div>
+            </nav>
+    
+            <div id="mySidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                <a href="./index.html">Home</a>
+                <a href="./about.html">About</a>
+                <a href="./event.html">Event</a>
+                <a href="./gallery.html">Gallery</a>
+                <a href="./verve_contact.html">Contact</a>
+              </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      
+      <br>
+        <section>
+       
+          <ul role="list" class="grid">
+            <h2 class="section-title" style="margin-top: 90px; text-align:center">MEET OUR TEAM</h2>
+
+            
+            <div class="container flow-content"></div>
+            <hr class="golden-line">
+           
+            <li>
+              
+              <article class="card" data-visible="false">
+                
+                <div class="card__front flow-content">
+                   
+                  <img class="card__img mx-auto" src="WhatsApp Image 2024-01-11 at 06.42.56_723f42d4.jpg" alt="John Smith (from Unsplash)" />
+                  <div class="flow-content" data-spacing="sm">
+                    <p class="card__name">Event </p>
+                    <p class="card__position">Natya Sangharsh (Drama competition)</p>
+                  </div>
+                </div>
+                <div class="card__back flow-content">
+                  <p class="card__name">Event Head </p>
+                  <q>Aareian Nakhawa -<br> 97696 40518<br> Sonal Ekkaldevi - <br>93721 23135
+                  </q>
+                  <ul role="list" class="card__social flex-group">
+                    <li>
+                      <a href="#">
+                        <i class="fa-brands fa-twitter fa-xl"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="fa-brands fa-linkedin fa-xl"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <footer class="card__footer">
+                  <button data-card-controller class="card__toggle">
+                    <i class="fa-solid fa-plus card__toggle-icon"></i>
+                  </button>
+                </footer>
+              </article>
+            </li>
+            <li>
+                <article class="card" data-visible="false">
+                  <div class="card__front flow-content">
+                    <img class="card__img mx-auto" src="WhatsApp Image 2024-01-11 at 06.42.56_723f42d4.jpg" alt="John Smith (from Unsplash)" />
+                    <div class="flow-content" data-spacing="sm">
+                      <p class="card__name">Event </p>
+                      <p class="card__position">Swar Sanvad  (Instrumental Competition)</p>
+                    </div>
+                  </div>
+                  <div class="card__back flow-content">
+                    <p class="card__name">Event Head </p>
+                    <q>Sutej Sood -
+                      97027 54219
+                    Bhavya Chauhan - 
+                      93215 33271
+                    </q>
+                    <ul role="list" class="card__social flex-group">
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-twitter fa-xl"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-linkedin fa-xl"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <footer class="card__footer">
+                    <button data-card-controller class="card__toggle">
+                      <i class="fa-solid fa-plus card__toggle-icon"></i>
+                    </button>
+                  </footer>
+                </article>
+              </li>
+      <li>
+                <article class="card" data-visible="false">
+                  <div class="card__front flow-content">
+                    <img class="card__img mx-auto" src="WhatsApp Image 2024-01-11 at 06.42.56_723f42d4.jpg" alt="John Smith (from Unsplash)" />
+                    <div class="flow-content" data-spacing="sm">
+                      <p class="card__name">Event </p>
+                      <p class="card__position">Disco Deewane <br>(Group Dance Competition)</p>
+                    </div>
+                  </div>
+                  <div class="card__back flow-content">
+                    <p class="card__name">Event Head </p>
+                    <q>Darshan Kharat -
+                      86524 41605
+                    Mrunal Holmukhe - 
+                      98677 16601
+                    </q>
+                    <ul role="list" class="card__social flex-group">
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-twitter fa-xl"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-linkedin fa-xl"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <footer class="card__footer">
+                    <button data-card-controller class="card__toggle">
+                      <i class="fa-solid fa-plus card__toggle-icon"></i>
+                    </button>
+                  </footer>
+                </article>
+              </li>
+      <li>
+                <article class="card" data-visible="false">
+                  <div class="card__front flow-content">
+                    <img class="card__img mx-auto" src="WhatsApp Image 2024-01-11 at 06.42.56_723f42d4.jpg" alt="John Smith (from Unsplash)" />
+                    <div class="flow-content" data-spacing="sm">
+                      <p class="card__name">Event </p>
+                      <p class="card__position">Echoes of Emotions
+                          ( Mono- Acting competition) 
+                          </p>
+                    </div>
+                  </div>
+                  <div class="card__back flow-content">
+                    <p class="card__name">Event Head </p>
+                    <q>Rushikesh Bandiwadekar - 93206 98157</q><li></li>
+                    <q>Arya Panchal - 88282 69062</q>
+                    <ul role="list" class="card__social flex-group">
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-twitter fa-xl"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-linkedin fa-xl"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <footer class="card__footer">
+                    <button data-card-controller class="card__toggle">
+                      <i class="fa-solid fa-plus card__toggle-icon"></i>
+                    </button>
+                  </footer>
+                </article>
+              </li>
+      <li>
+                <article class="card" data-visible="false">
+                  <div class="card__front flow-content">
+                    <img class="card__img mx-auto" src="WhatsApp Image 2024-01-11 at 06.42.56_723f42d4.jpg" alt="John Smith (from Unsplash)" />
+                    <div class="flow-content" data-spacing="sm">
+                      <p class="card__name">Event </p>
+                      <p class="card__position">Pitch Perfect (Singing competition) </p>
+                    </div>
+                  </div>
+                  <div class="card__back flow-content">
+                    <p class="card__name">Event Head </p>
+                    <q>Shravani Narsale -
+                      <li></li> 
+                      87793 87574
+      <li></li>
+                    Rutuja Sangle - 
+                      93217 37992
+                    </q>
+                    <ul role="list" class="card__social flex-group">
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-twitter fa-xl"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-linkedin fa-xl"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <footer class="card__footer">
+                    <button data-card-controller class="card__toggle">
+                      <i class="fa-solid fa-plus card__toggle-icon"></i>
+                    </button>
+                  </footer>
+                </article>
+              </li>
+      <li>
+                <article class="card" data-visible="false">
+                  <div class="card__front flow-content">
+                    <img class="card__img mx-auto" src="WhatsApp Image 2024-01-11 at 06.42.56_723f42d4.jpg" alt="John Smith (from Unsplash)" />
+                    <div class="flow-content" data-spacing="sm">
+                      <p class="card__name">Event </p>
+                      <p class="card__position">Mic-Drop ( Rapping and Beat-boxing Competition)  </p>
+                    </div>
+                  </div>
+                  <div class="card__back flow-content">
+                    <p class="card__name">Event Head </p>
+                    <q>Arya Panchal - 
+                      88282 69062
+                      Somesh Chilka -
+                      90824 66272
+                      </q>
+                    <ul role="list" class="card__social flex-group">
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-twitter fa-xl"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-linkedin fa-xl"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <footer class="card__footer">
+                    <button data-card-controller class="card__toggle">
+                      <i class="fa-solid fa-plus card__toggle-icon"></i>
+                    </button>
+                  </footer>
+                </article>
+              </li>
+      <li>
+                <article class="card" data-visible="false">
+                  <div class="card__front flow-content">
+                    <img class="card__img mx-auto" src="WhatsApp Image 2024-01-11 at 06.42.56_723f42d4.jpg" alt="John Smith (from Unsplash)" />
+                    <div class="flow-content" data-spacing="sm">
+                      <p class="card__name">Event </p>
+                      <p class="card__position">Hit the floor ( solo/duo Bollywood dance competition) </p>
+                    </div>
+                  </div>
+                  <div class="card__back flow-content">
+                    <p class="card__name">Event Head </p>
+                    <q>Sahil Ambigar - 
+                      88054 29474 
+                    Mrunal Holmukhe - 
+                      98677 16601
+                    </q>
+                    <ul role="list" class="card__social flex-group">
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-twitter fa-xl"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-linkedin fa-xl"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <footer class="card__footer">
+                    <button data-card-controller class="card__toggle">
+                      <i class="fa-solid fa-plus card__toggle-icon"></i>
+                    </button>
+                  </footer>
+                </article>
+              </li>
+      <li>
+                <article class="card" data-visible="false">
+                  <div class="card__front flow-content">
+                    <img class="card__img mx-auto" src="WhatsApp Image 2024-01-11 at 06.42.56_723f42d4.jpg" alt="John Smith (from Unsplash)" />
+                    <div class="flow-content" data-spacing="sm">
+                      <p class="card__name">Event </p>
+                      <p class="card__position">Clash of Beats ( Dj Battle competition) </p>
+                    </div>
+                  </div>
+                  <div class="card__back flow-content">
+                    <p class="card__name">Event Head </p>
+                    <q>Bhavesh Ambavane - 
+                      <li></li>70397 61436 
+                      <li></li>
+                      Rishil Ramdhumal - 
+                      <li></li>
+                      98336 99712
+                      </q>
+                      
+                    <ul role="list" class="card__social flex-group">
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-twitter fa-xl"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-linkedin fa-xl"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <footer class="card__footer">
+                    <button data-card-controller class="card__toggle">
+                      <i class="fa-solid fa-plus card__toggle-icon"></i>
+                    </button>
+                  </footer>
+                </article>
+              </li>
+      <li>
+                <article class="card" data-visible="false">
+                  <div class="card__front flow-content">
+                    <img class="card__img mx-auto" src="WhatsApp Image 2024-01-11 at 06.42.56_723f42d4.jpg" alt="John Smith (from Unsplash)" />
+                    <div class="flow-content" data-spacing="sm">
+                      <p class="card__name">Event </p>
+                      <p class="card__position">Mystique (Fashion Show Competition) </p>
+                    </div>
+                  </div>
+                  <div class="card__back flow-content">
+                    <p class="card__name">Event Head </p>
+                    <q>Riya Singh - <br>96199 44933
+                       <br>
+                      Mrunmayee Yadav- <br>
+                      90828 24148
+                      </q>
+                    <ul role="list" class="card__social flex-group">
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-twitter fa-xl"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-linkedin fa-xl"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <footer class="card__footer">
+                    <button data-card-controller class="card__toggle">
+                      <i class="fa-solid fa-plus card__toggle-icon"></i>
+                    </button>
+                  </footer>
+                </article>
+              </li>
+      <li>
+                <article class="card" data-visible="false">
+                  <div class="card__front flow-content">
+                    <img class="card__img mx-auto" src="WhatsApp Image 2024-01-11 at 06.42.56_723f42d4.jpg" alt="John Smith (from Unsplash)" />
+                    <div class="flow-content" data-spacing="sm">
+                      <p class="card__name">Event </p>
+                      <p class="card__position">Natrang ( Classical Dance Competition) </p>
+                    </div>
+                  </div>
+                  <div class="card__back flow-content">
+                    <p class="card__name">Event Head </p>
+                    <q>Yash Chaugule - 9076369939 
+                      Rutuja Sangle - 
+                      9321737992 
+                      </q>
+                    <ul role="list" class="card__social flex-group">
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-twitter fa-xl"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-linkedin fa-xl"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <footer class="card__footer">
+                    <button data-card-controller class="card__toggle">
+                      <i class="fa-solid fa-plus card__toggle-icon"></i>
+                    </button>
+                  </footer>
+                </article>
+              </li>
+      <li>
+                <article class="card" data-visible="false">
+                  <div class="card__front flow-content">
+                    <img class="card__img mx-auto" src="WhatsApp Image 2024-01-11 at 06.42.56_723f42d4.jpg" alt="John Smith (from Unsplash)" />
+                    <div class="flow-content" data-spacing="sm">
+                      <p class="card__name">Event </p>
+                      <p class="card__position">Amped - Up ! ( Band competition) </p>
+                    </div>
+                  </div>
+                  <div class="card__back flow-content">
+                    <p class="card__name">Event Head </p>
+                    <q>Khushi Korgaonakar-<li></li>91371 65574 
+                      <li></li>Om Badade -<li></li>
+                      91360 49280
+                      </q>
+                    <ul role="list" class="card__social flex-group">
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-twitter fa-xl"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-linkedin fa-xl"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <footer class="card__footer">
+                    <button data-card-controller class="card__toggle">
+                      <i class="fa-solid fa-plus card__toggle-icon"></i>
+                    </button>
+                  </footer>
+                </article>
+              </li>
+      <li>
+                <article class="card" data-visible="false">
+                  <div class="card__front flow-content">
+                    <img class="card__img mx-auto" src="WhatsApp Image 2024-01-11 at 06.42.56_723f42d4.jpg" alt="John Smith (from Unsplash)" />
+                    <div class="flow-content" data-spacing="sm">
+                      <p class="card__name">Event </p>
+                      <p class="card__position">Mr. & Miss. VIT </p>
+                    </div>
+                  </div>
+                  <div class="card__back flow-content">
+                    <p class="card__name">Event Head </p>
+                    <q>Riya Singh - 96199 44933 
+                      Mrunal Holmukhe  - 
+                    9867716601
+                    </q>
+                    <ul role="list" class="card__social flex-group">
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-twitter fa-xl"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa-brands fa-linkedin fa-xl"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <footer class="card__footer">
+                    <button data-card-controller class="card__toggle">
+                      <i class="fa-solid fa-plus card__toggle-icon"></i>
+                    </button>
+                  </footer>
+                </article>
+                
+              </li>
+     
+                
+
+            
+     
+        
+        </section>
+
+        <script>
+      
+      
+            // Card toggle code
+            const cardControllers = document.querySelectorAll("[data-card-controller]");
+      
+            cardControllers.forEach((controller) => {
+              controller.addEventListener("click", (e) => {
+                const card = e.currentTarget.closest(".card"); // Use closest to find the closest parent with the .card class
+                const isVisible = card.getAttribute("data-visible");
+      
+                if (isVisible === "false") {
+                  card.setAttribute("data-visible", "true");
+                } else {
+                  card.setAttribute("data-visible", "false");
+                }
+              });
+            });
+        
+      
+          function openNav() {
+            document.getElementById("mySidebar").style.width = "50%";
+            document.getElementById("main").style.marginLeft = "250px";
+          }
+      
+          function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+          }
+        </script>
+      </body>
+      
+      </html>
