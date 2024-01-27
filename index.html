@@ -9,7 +9,7 @@
     <title>VERVE</title>   
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="style.css" async>
     <link rel="stylesheet" href="test.css">
@@ -17,7 +17,58 @@
     <link rel="import" href="Event.html">
     <link rel="import" href="gallery.html">
     <link rel="import" href="about.html">
+    
     <style>
+        .site-footer {
+            background-color: #111010;
+              text-align: center;
+              margin: 10px 0;
+              padding: 10px 0;
+              z-index: 4;
+          }
+          
+          #social-wrapper {
+              text-align: center;
+          }
+          
+          /*Social Media Icons*/
+          .social-wrapper {
+              text-align: center;
+          }
+          
+          .social-wrapper ul li {
+              display: inline;
+              margin: 0 5px;
+          }
+      
+          .instagram-icon,
+          
+          .foursquare-icon{
+              margin-top: .625em;
+              width: 40px;
+              height: 40px;
+              opacity: .6;
+              filter: alpha(opacity=60); /* For IE8 and earlier */
+            border-radius: 25px;
+          }
+          footer p {
+            font-size: 30px;
+        
+            color: #f5fffd;
+            text-shadow: none;
+            z-index: 4;
+        }
+          
+          .instagram-icon:hover,
+          
+          .foursquare-icon:hover {
+              opacity: 1.0;
+              filter: alpha(opacity=100); /* For IE8 and earlier */
+          }
+          
+          .footer-nav p {
+              text-align: center;
+          }
     </style>
 </head>
 <body id="main">
@@ -64,13 +115,13 @@
       </div>
 
        
-        <!-- <button class="menu__toggle r-button" type="button" aria-controls="main-menu">
+        <button class="menu__toggle r-button" type="button" aria-controls="main-menu">
           <span class="menu__hamburger m-hamburger">
             <span class="m-hamburger__label">
               <span class="menu__toggle-hint screen-reader">Open menu</span>
             </span>
           </span>
-        </button> -->
+        </button> 
       </div>
       <section id="section2">
 
@@ -85,7 +136,22 @@
       </section>
       <section id="section3">
        
-      
+        <footer id="colophon" class="site-footer" role="contentinfo">
+            <div class="social-wrapper">
+              <ul>
+              
+                <li>
+                  
+                  <a href="https://www.instagram.com/verve.vit?igsh=MXYycWIxZ2ZxMzRqeg==" target="_blank">
+                    <p>Follow us for more info!!<p>
+                    <img src="https://www.mchenryvillage.com/images/instagram-icon.png" alt="Instagram Logo" class="instagram-icon"></a>
+                </li>
+                
+              </ul>
+            </div>
+          
+           
+          </footer>
       
 
     <script>
@@ -286,6 +352,8 @@
     }
     </script>
   
-
+ 
+  
 </body>
+
 </html>
